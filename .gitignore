@@ -3,6 +3,8 @@
 **/.DS_Store
 .Trashes
 
+.out
+
 # Local .terraform directories
 **/.terraform/*
 

@@ -6,8 +6,12 @@ terraform {
   }
 }
 
-provider "docker" {
+provider "docker" {}
 
+resource "null_resource" "dockervol" {
+  provisioner "local-exec" {
+    command = "mkdir noderedvol/ || true && sudo chown -R 1000:1000 noderedvol"
+  }
 }
 resource "docker_image" "nodered_image" {
   name = "nodered/node-red:latest"
@@ -26,6 +30,10 @@ resource "docker_container" "nodered_container" {
   ports {
     internal = var.int_port
     external = var.ext_port
+  }
+  volumes {
+    container_path = "/data"
+    host_path      = "/Users/marcelosaad/Treinamentos/more_then_certificate_terraform/terraform-docker/noderedvol/"
   }
 }
 

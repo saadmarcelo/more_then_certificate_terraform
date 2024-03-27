@@ -1,6 +1,6 @@
 variable "ext_port" {
-  type    = number
-  default = 1880
+  type = number
+  #  sensitive = true
 
   validation {
     condition     = var.ext_port <= 65535 && var.ext_port > 0
@@ -9,8 +9,9 @@ variable "ext_port" {
 }
 
 variable "int_port" {
-  type    = number
-  default = 1880
+  type      = number
+  default   = 1880
+  sensitive = true
 
   validation {
     condition     = var.int_port == 1880

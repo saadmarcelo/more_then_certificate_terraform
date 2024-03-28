@@ -10,7 +10,7 @@ provider "docker" {}
 
 resource "null_resource" "dockervol" {
   provisioner "local-exec" {
-    command = "mkdir noderedvol/ || true && sudo chown -R 1000:1000 noderedvol"
+    command = "mkdir noderedvol/ || true"
   }
 }
 resource "docker_image" "nodered_image" {

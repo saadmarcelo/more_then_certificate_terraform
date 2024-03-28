@@ -33,7 +33,7 @@ resource "docker_container" "nodered_container" {
   }
   volumes {
     container_path = "/data"
-    host_path      = "/Users/marcelosaad/Treinamentos/more_then_certificate_terraform/terraform-docker/noderedvol/"
+    host_path      = "${path.cwd}/noderedvol/"
   }
 }
 

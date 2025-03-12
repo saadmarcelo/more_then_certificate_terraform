@@ -16,3 +16,6 @@ para ele poder editar o arquivo .terraform.lock.hcl
 
 #terraform show 
 mostra o state de forma mais facil de ler
+
+#terraform state list ( lista todos os resources craidos )
+

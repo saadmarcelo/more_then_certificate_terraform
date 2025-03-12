@@ -12,3 +12,7 @@ na posta onde esta o codigo do terraform
 para mudar a versao do provider apos editar o arquivo do provider.tf na variavel version rodar o comando 
 # terraform init -upgrade
 para ele poder editar o arquivo .terraform.lock.hcl
+
+
+#terraform show 
+mostra o state de forma mais facil de ler

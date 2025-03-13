@@ -18,4 +18,5 @@ para ele poder editar o arquivo .terraform.lock.hcl
 mostra o state de forma mais facil de ler
 
 #terraform state list ( lista todos os resources craidos )
-
+#terraform console -state"../state/terraform.tfstate"     ( entra no modo console )
+#terraform output      ( mostra a saida dos outputs )

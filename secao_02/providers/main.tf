@@ -1,16 +1,19 @@
 resource "random_id" "random" {
   byte_length = 2
+  count       = var.repo_count
 
 }
 resource "github_repository" "mtc_repo" {
-  name        = "mtc-repo-${random_id.random.dec}"
+  count       = var.repo_count
+  name        = "mtc-repo-${random_id.random[count.index].dec}"
   visibility  = "private"
   auto_init   = true
   description = "Code for mtc"
 }
 
 resource "github_repository_file" "readme" {
-  repository          = github_repository.mtc_repo.name
+  count               = var.repo_count
+  repository          = github_repository.mtc_repo[count.index].name
   branch              = "main"
   file                = "README.md"
   content             = "# This repository is for infra developers"
@@ -18,7 +21,8 @@ resource "github_repository_file" "readme" {
 }
 
 resource "github_repository_file" "index" {
-  repository          = github_repository.mtc_repo.name
+  count               = var.repo_count
+  repository          = github_repository.mtc_repo[count.index].name
   branch              = "main"
   file                = "index.html"
   content             = "Hellow Terraform"

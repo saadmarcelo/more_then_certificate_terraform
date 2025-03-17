@@ -20,6 +20,12 @@ variable "env" {
 
 }
 
+# variable "visibility" {
+#   type        = string
+#   description = "visibility of the repo"
+#   default     = var.env == "dev" ? "private" : "public"
+# }
+
 # variable "varsource" {
 #   type        = string
 #   description = "Source used to difine variables"

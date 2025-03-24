@@ -1,5 +1,5 @@
 output "clone-url" {
-  value       = { for i in github_repository.mtc_repo[*] : i.name => i.http_clone_url }
+  value       = { for i in github_repository.mtc_repo : i.name => i.http_clone_url }
   description = "Repository names and URL"
 
 }
